@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './src/index';
+import App from './src/index.js';
 import Home from './src/home';
 
 const Test = () => {
