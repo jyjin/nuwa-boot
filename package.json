@@ -5,6 +5,7 @@
   "scripts": {
     "test": "node --experimental-modules ./src/bin/start.mjs",
     "test1": "node --experimental-modules ./src/bin/make-webpack/config/generator-webpack-config.mjs",
+    "reinstall": "rm -rf dist lib node_modules package-lock.json & npm i",
     "start": "webpack serve --mode=development --config webpack.config.babel.js",
     "build": "rm -rf ./dist & webpack --mode=production  --config webpack.production.config.js"
   },
@@ -52,7 +53,6 @@
     "type": "git",
     "url": "git+ssh://git@github.com/jyjin/nuwa-boot.git"
   },
-  "type": "module",
   "keywords": [
     "react",
     "micro-service"
