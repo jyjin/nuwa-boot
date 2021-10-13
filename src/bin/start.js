@@ -5,8 +5,12 @@ import path from 'path'
 
 const start = (program) => {
 
-  let { config } = program.opts();
-  let getUserWebpackConfig = require(path.resolve('./', config));
+  let config = {}
+  let getUserWebpackConfig = {}
+  if (program && program.opts && program.opts()) {
+    config = program.opts().config || {};
+    getUserWebpackConfig = require(path.resolve('./', config));
+  }
   let webpackConfig = Object.assign({}, defaultWebpackConfig)
   const compiler = Webpack(webpackConfig);
   console.log('defaultWebpackConfig == ', defaultWebpackConfig)
