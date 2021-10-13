@@ -1,11 +1,17 @@
 import Webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server'
-import webpackConfig from './make-webpack/config/generator-webpack-config'
+import defaultWebpackConfig from './make-webpack/config/generator-webpack-config'
+import path from 'path'
 
-const start = () => {
+const start = (program) => {
 
-  // webpackConfig.entry.unshift('webpack-dev-server/client?/', 'webpack/hot/dev-server');
+  let { config } = program.opts();
+  let getUserWebpackConfig = require(path.resolve('./', config));
+  let webpackConfig = Object.assign({}, defaultWebpackConfig)
   const compiler = Webpack(webpackConfig);
+  console.log('defaultWebpackConfig == ', defaultWebpackConfig)
+  console.log('getUserWebpackConfig == ', getUserWebpackConfig)
+
   const devServerOptions = { ...webpackConfig.devServer };
   const server = new WebpackDevServer(devServerOptions, compiler);
 

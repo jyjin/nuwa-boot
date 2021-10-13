@@ -2,11 +2,14 @@
 	"name": "nuwa-boot",
 	"version": "1.0.0",
 	"main": "index.js",
+	"bin": {
+    "nuwa-boot": "./bin/nuwa-boot"
+  },
 	"scripts": {
 		"reinstall": "rm -rf dist lib node_modules package-lock.json & npm i",
 		"start1": "webpack serve --mode=development --config webpack.config.babel.js",
 		"build1": "rm -rf ./dist & webpack --mode=production  --config webpack.production.config.js",
-		"compile": "gulp compile",
+		"prebuild": "gulp prebuild",
 		"start": "gulp",
     "build": ""
 	},

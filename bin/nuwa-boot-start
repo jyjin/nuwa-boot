@@ -10,4 +10,8 @@ program
   .option('-x,  --external', 'for external')
   .parse(process.argv);
 
+// function start(p){
+//   console.log('start sth ...', p.opts().config)
+// }
+
 start(program);
