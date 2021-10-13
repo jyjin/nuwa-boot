@@ -1,12 +1,12 @@
 import Webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server'
-import webpackConfig from './make-webpack/config/generator-webpack-config.mjs'
-import _ from './util.mjs'
+import webpackConfig from './make-webpack/config/generator-webpack-config'
 
 const start = () => {
 
+  // webpackConfig.entry.unshift('webpack-dev-server/client?/', 'webpack/hot/dev-server');
   const compiler = Webpack(webpackConfig);
-  const devServerOptions = { ...webpackConfig.devServer, open: true };
+  const devServerOptions = { ...webpackConfig.devServer };
   const server = new WebpackDevServer(devServerOptions, compiler);
 
   server.startCallback(() => {
@@ -14,5 +14,4 @@ const start = () => {
   });
 
 }
-start()
 export default start

@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require("webpack");
 
 const entry = {
-  app: './app.js',
+  app: './src/app.js',
   vendor: ["react", "react-dom"]
 };
 
@@ -90,6 +90,13 @@ const plugins = [
 
 const devServer = {
   allowedHosts: 'all',
+  hot: false,
+  watchFiles: {
+    paths: ['src/*.js']
+  },
+  historyApiFallback: true,
+  host: 'localhost',
+  liveReload: true,
 }
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 module.exports = {

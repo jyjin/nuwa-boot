@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './src/index.js';
-import Home from './src/home';
+import App from './react/index.js';
+import Home from './react/home';
 
 const Test = () => {
   return <div>
@@ -15,6 +15,7 @@ console.log('test == ', Test)
 
 ReactDOM.render(
   <div>
+    Save the world together!
     <Test/>
     <Home />
     <App />

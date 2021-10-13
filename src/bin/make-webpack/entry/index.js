@@ -1,5 +1,5 @@
 const entry = {
-  app: './app.js',
+  app: './lib/app.js',
   vendor: ["react", "react-dom"]
 };
 
