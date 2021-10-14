@@ -1,6 +1,6 @@
 import Webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server'
-import defaultWebpackConfig from './config/generator-webpack-config'
+import generatorWebpackConfig from './config/generator-webpack-config'
 import path from 'path'
 import context from './util/context'
 import getNuwaConfig from './config/get-nuwa-config'
@@ -14,13 +14,14 @@ const start = (program) => {
     getUserWebpackConfig = require(path.resolve('./', config));
   }
   const { initContext } = context
-  initContext({ program, hasArgs, env: 'development' })
+  // initContext({ program, hasArgs, env: 'development' })
 
-  console.log('context == ', context)
+  // console.log('context == ', context)
 
-  const { root } = context
-  console.log('root == ', context)
+  // const { root } = context
+  // console.log('root == ', context)
 
+  let defaultWebpackConfig = generatorWebpackConfig();
   let webpackConfig = Object.assign({}, defaultWebpackConfig)
   const compiler = Webpack(webpackConfig);
   console.log('defaultWebpackConfig == ', defaultWebpackConfig)
@@ -29,9 +30,9 @@ const start = (program) => {
   const devServerOptions = { ...webpackConfig.devServer };
   const server = new WebpackDevServer(devServerOptions, compiler);
 
-  // server.startCallback(() => {
-  //   console.log("Starting server on http://localhost:8080");
-  // });
+  server.startCallback(() => {
+    console.log("Starting server on http://localhost:8080");
+  });
 
 }
 export default start
