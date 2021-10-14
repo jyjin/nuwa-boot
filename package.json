@@ -1,7 +1,7 @@
 {
 	"name": "nuwa-boot",
-	"version": "1.0.3",
-	"main": "index.js",
+	"version": "1.0.1",
+	"main": "./lib/app.js",
 	"bin": {
 		"nuwa-boot": "bin/nuwa-boot"
 	},
@@ -11,7 +11,8 @@
 		"build1": "rm -rf ./dist & webpack --mode=production  --config webpack.production.config.js",
 		"prebuild": "gulp prebuild",
 		"start": "gulp",
-		"publish": "npm publish"
+		"publish": "npm publish",
+		"beta": "npm publish --tag beta"
 	},
 	"author": "jyjin",
 	"license": "ISC",
@@ -41,14 +42,14 @@
 		"less-loader": "^10.0.1",
 		"mini-css-extract-plugin": "^2.4.2",
 		"optimize-css-assets-webpack-plugin": "^6.0.1",
-    "react": "^17.0.2",
+		"react": "^17.0.2",
 		"react-dom": "^17.0.2",
 		"regenerator-runtime": "^0.13.9",
 		"sass": "^1.42.1",
 		"sass-loader": "^12.1.0",
 		"scss-loader": "0.0.1",
 		"style-loader": "^3.2.1",
-    "webpack": "^5.50.0",
+		"webpack": "^5.50.0",
 		"webpack-cli": "^4.8.0",
 		"webpack-dev-server": "^4.0.0"
 	},
