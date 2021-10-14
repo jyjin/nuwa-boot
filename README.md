@@ -1,12 +1,28 @@
-# 女娲【Nuwa】
+<h1 align="center">Welcome to Nuwa - 女娲 👋</h1>
+<p>
+  
+  <a href="https://www.npmjs.com/package/nuwa-boot" target="_blank">
+    <img alt="Version" src="https://img.shields.io/badge/Version-1.0.0-blue">
+  </a>
+  <a href="https://www.npmjs.com/package/nuwa-boot" target="_blank">
+    <img alt="Version" src="https://img.shields.io/badge/Npm-6.14.12-brightgreen">
+  </a>
+  <a href="https://www.npmjs.com/package/nuwa-boot" target="_blank">
+    <img alt="Version" src="https://img.shields.io/badge/Node-12.22.1-purple">
+  </a>
+  <a href="#" target="_blank">
+    <img alt="License: ISC" src="https://img.shields.io/badge/License-ISC-yellow.svg" />
+  </a>
+</p>
 
-[![NPM Version][npm-image]][[npm-url](https://www.npmjs.com/package/nuwa-boot)]
-[![NPM Downloads][downloads-image]][downloads-url]
-[![Linux Build][github-actions-image]][github-actions-url]
-[![Windows Build][appveyor-image]][appveyor-url]
-[![Test Codecov][codecov-image]][codecov-url]
 
-尝试打造一款React的微服务前端脚手架
+# 🏠 [Homepage](https://github.com/jyjin/nuwa-boot#readme)
+
+A enterprise react micro app bootstrap framework.
+
+尝试打造一款企业级React的微服务前端脚手架
+
+
 ## Requirements
 
 Please ensure your have the environments that like following requirements, to improve your effect when using Nuwa.
@@ -50,3 +66,19 @@ And then run command `nuwa-root -c ./nuwa.config.js`, the app will start at `htt
 | Name | Default | Description |
 | -- | -- | --|
 | Port | 4000 | Webpack dev server port |
+
+
+
+
+
+## 👤 Author
+
+   **jyjin 金建业**
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/jyjin/nuwa-boot/issues). You can also take a look at the [contributing guide](ssh://git@github.com/jyjin/nuwa-boot/blob/master/CONTRIBUTING.md).
+
+## Show your support
+
+Give a ⭐️  if this project helped you!
