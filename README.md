@@ -20,7 +20,7 @@
 
 A enterprise react micro app bootstrap framework.
 
-尝试打造一款企业级React的微服务前端脚手架
+尝试打造一款企业级的React轻量前端微服务脚手架
 
 
 ## Requirements
@@ -53,7 +53,7 @@ modules.exports = {
 ```
 
 And then run command `nuwa-root -c ./nuwa.config.js`, the app will start at `http://localhost:4000` by default.
-## Configuation
+## Configuration
 
 ### Nuwa-boot  Cli
 

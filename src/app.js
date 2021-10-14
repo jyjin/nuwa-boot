@@ -1,24 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './react/index.js';
-import Home from './react/home';
+import Demo1 from './react/demo1';
+import Demo2 from './react/demo2';
 
-const Test = () => {
-  return <div>
-    jyjin123
+const Header = () => {
+  return <div className={'header'} style={{ color: 'white' }}>
+    <a>NUWA</a>
   </div>
 }
 
-console.log('app == ', App)
-console.log('test == ', Test)
-
-
 ReactDOM.render(
   <div>
-    Save the world together!
-    <Test/>
-    <Home />
-    <App />
+    <Header />
+    <h1 align='center'>Welcome to Nuwa! </h1>
+    <Demo1 />
+    <Demo2 />
+
   </div>,
   document.getElementById('root')
 );

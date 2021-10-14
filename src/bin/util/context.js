@@ -1,26 +1,30 @@
 
+import path from 'path';
 import generatorWebpackConfig from "../config/generator-webpack-config";
 import getNuwaConfig from "../config/get-nuwa-config";
 const defaultSetting = {
-  root: process.cwd()
+  port: 4000,
+  root: process.cwd(),
 }
 
-
 const initContext = (options) => {
-
-
   let config = {}
   let getUserWebpackConfig = {}
   if (options.hasArgs) {
     config = options.program.opts().config || {};
-    getUserWebpackConfig = require(path.resolve('./', config));
+    getUserWebpackConfig = require(path.resolve(defaultSetting.root, './', config));
+  } else {
+    getUserWebpackConfig = require(path.resolve(defaultSetting.root, './nuwa.config.js'));
   }
 
-  generatorWebpackConfig();
+  let webpackConfig = generatorWebpackConfig({ ...defaultSetting, ...getUserWebpackConfig })
+  // console.log('getUserWebpackConfig == ', getUserWebpackConfig)
+  // console.log('defaultWebpackConfig == ', webpackConfig)
 
   let context = {
-    ...defaultSetting,
+    defaultSetting,
     ...options,
+    webpackConfig,
   }
   Object.assign(exports, context);
 }

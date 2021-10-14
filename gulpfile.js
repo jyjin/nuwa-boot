@@ -26,42 +26,35 @@ const copy = (cb) => {
   ]).pipe(gulp.dest('lib'))
 }
 
-// start需要的事情
-const prebuild = (cb) => {
-  return gulp.parallel([compile, copy])
-}
-
 const start = () => {
   const _start = require('./lib/bin/start').default
   _start();
 }
+// for test...
+// const first = (cb) => {
+//   setTimeout(() => {
+//     console.log(111)
+//     cb()
+//   }, 3000)
+// }
 
-const first = (cb) => {
-  setTimeout(() => {
-    console.log(111)
-    cb()
-  }, 3000)
-}
+// const second = (cb) => {
+//   setTimeout(() => {
+//     console.log(222)
+//     cb()
+//   }, 4000)
+// };
 
-const second = (cb) => {
-  setTimeout(() => {
-    console.log(222)
-    cb()
-  }, 4000)
-};
-
-const third = cb => {
-  setTimeout(() => {
-    console.log(333)
-    cb()
-  }, 1000)
-}
+// const third = cb => {
+//   setTimeout(() => {
+//     console.log(333)
+//     cb()
+//   }, 1000)
+// }
 
 const watch = (cb) => {
   gulp.watch([
     'src/**', 'src/**/**',
-    // 'src/**.less', 'src/**/**.less',
-    // 'src/**.scss', 'src/**/**.scss',
   ], gulp.parallel(copy, compile))
   cb()
 }
@@ -71,7 +64,6 @@ const defaultTask = gulp.series(
   watch,
   start,
 )
-
 
 gulp.task('compile', compile);
 gulp.task('copy', copy);
