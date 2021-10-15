@@ -15,7 +15,6 @@ ReactDOM.render(
     <h1 align='center'>Welcome to Nuwa! </h1>
     <Demo1 />
     <Demo2 />
-
   </div>,
   document.getElementById('root')
 );

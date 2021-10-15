@@ -12,7 +12,10 @@ const generatorWebpackConfig = (config) => {
     path: path.resolve(config.root, './dist'),
     filename: '[name].[chunkhash:8].js',
   };
-  const template = path.resolve(config.root, "./src/index.html")
+
+  const getPackageInfo = require(path.resolve(config.root, './package.json'))
+  // 这里约束main:'./xxx/xxx.js'的格式，且入口文件必须在第一层
+  const template = path.resolve(config.root, getPackageInfo.main.split(path.sep)[1], 'index.html')
 
   const plugins = [
     // 分离文件
