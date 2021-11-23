@@ -8,16 +8,18 @@ const defaultSetting = {
 }
 
 const initContext = (options) => {
-  let config = {}
+  let config
   let getUserWebpackConfig = {}
   if (options.hasArgs) {
-    config = options.program.opts().config || {};
-    getUserWebpackConfig = require(path.resolve(defaultSetting.root, './', config));
+    config = options.program.opts().config;
+    if (config !== undefined) {
+      getUserWebpackConfig = require(path.resolve(defaultSetting.root, './', config))
+    }
   } else {
     getUserWebpackConfig = require(path.resolve(defaultSetting.root, './nuwa.config.js'));
   }
 
-  let webpackConfig = generatorWebpackConfig({ ...defaultSetting, ...getUserWebpackConfig })
+  let webpackConfig = generatorWebpackConfig({ ...options, ...defaultSetting, ...getUserWebpackConfig, isSelf: !options.hasArgs })
   // console.log('getUserWebpackConfig == ', getUserWebpackConfig)
   // console.log('defaultWebpackConfig == ', webpackConfig)
 

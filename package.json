@@ -1,16 +1,18 @@
 {
 	"name": "nuwa-boot",
 	"version": "1.1.0-beta-1.0.0",
-	"main": "./lib/app.js",
+	"main": "./src/index.js",
 	"bin": {
 		"nuwa-boot": "bin/nuwa-boot"
 	},
 	"scripts": {
 		"reinstall": "rm -rf dist lib node_modules package-lock.json & npm i",
 		"start1": "webpack serve --mode=development --config webpack.config.babel.js",
-		"build1": "rm -rf ./dist & webpack --mode=production  --config webpack.production.config.js",
+		"gulp-start": "gulp",
+		"start": "nuwa-boot start",
 		"prebuild": "gulp prebuild",
-		"start": "gulp",
+		"build": "nuwa-boot build",
+		"prepublish": "npm run build",
 		"publish": "npm publish",
 		"beta": "npm publish --tag beta"
 	},
@@ -41,6 +43,8 @@
 		"less": "^4.1.2",
 		"less-loader": "^10.0.1",
 		"mini-css-extract-plugin": "^2.4.2",
+		"nunjucks": "^3.2.3",
+		"nuwa-master": "^1.0.0",
 		"optimize-css-assets-webpack-plugin": "^6.0.1",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2",
@@ -69,5 +73,8 @@
 	"homepage": "https://github.com/jyjin/nuwa-boot#readme",
 	"directories": {
 		"lib": "lib"
+	},
+	"devDependencies": {
+		"webpackbar": "^5.0.2"
 	}
 }

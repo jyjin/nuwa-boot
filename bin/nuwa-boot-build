@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const program = require('commander');
-const start = require('../lib/bin/start').default;
+const build = require('../lib/bin/build').default;
 
 program
   .option('-c, --config <path>', 'set config path. defaults to ./nuwa.config.js')
@@ -10,4 +10,4 @@ program
   .option('-x,  --external', 'for external')
   .parse(process.argv);
 
-start(program);
+build(program);

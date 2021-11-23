@@ -5,6 +5,12 @@ const Header = () => {
   </div>
 }
 export default class Demo1 extends Component {
+
+  constructor(props){
+    super(props)
+    console.log('sub app props == ', props)
+  }
+
   render() {
     return (
       <div>

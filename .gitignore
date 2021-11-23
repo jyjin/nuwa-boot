@@ -1,5 +1,6 @@
 /node_modules
 /dist
+/nuwa
 /lib
 /package-lock.json
 /yarn-lock.json

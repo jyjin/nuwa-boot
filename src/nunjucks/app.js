@@ -4,8 +4,8 @@ import { createBrowserHistory } from 'history';
 import ReactDOM from 'react-dom';
 import Demo1 from './react/demo1';
 import Demo2 from './react/demo2';
-const AppMaster = React.lazy(() => import('/Users/jyjin/workspace/gitProject/nuwa-master/react/routes.js'))
-const App1 = React.lazy(() => import('/Users/jyjin/workspace/gitProject/nuwa-app1/react/routes.js'))
+const AppMaster = React.lazy(() => import('{{appMaster}}'))
+const App1 = React.lazy(() => import('{{app1}}'))
 
 
 function asyncComponent(Comp) {
@@ -14,7 +14,7 @@ function asyncComponent(Comp) {
   </React.Suspense>
 }
 
-const DefaultRoutePages = (props) => <Router hashHistory={createBrowserHistory}>
+const DefaultRoutePages = () => <Router hashHistory={createBrowserHistory}>
   <Switch>
     <Route exact path={`/demo1`} component={_props => <Demo1 {..._props} appInfo={props} />} />
     <Route exact path={`/demo2`} component={Demo2} />
@@ -24,19 +24,18 @@ const DefaultRoutePages = (props) => <Router hashHistory={createBrowserHistory}>
   </Switch>
 </Router>
 
-const SubApps = () => {
-  // console.log('app props == ', props)
-  const props = {}
+const SubApps = props => {
+  console.log('app props == ', props)
   return [
-    <DefaultRoutePages {...props}/>,
-    asyncComponent(App1)
+    <DefaultRoutePages />,
+    asyncComponent(App1) 
   ]
 }
 
 ReactDOM.render(
   <div>
     <React.Suspense fallback={<div>loading...</div>}>
-      <AppMaster autoRoute={SubApps} />
+      <AppMaster app={SubApps} />
     </React.Suspense>
 
   </div>
