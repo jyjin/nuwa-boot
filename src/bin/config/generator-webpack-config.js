@@ -28,7 +28,7 @@ const generatorWebpackConfig = (config) => {
       template,
     }),
     new MiniCssExtractPlugin({
-      filename: 'index.css',
+      filename: 'index.[chunkhash:8].css',
     }),
     new webpack.DefinePlugin({
       DEV: JSON.stringify('dev')
@@ -61,7 +61,8 @@ const generatorWebpackConfig = (config) => {
     plugins,
     optimization: {
       splitChunks: {
-        minSize: 20000,
+        minSize: 2,
+        maxSize: 2000,
         minRemainingSize: 0,
         minChunks: 1,
         maxAsyncRequests: 30,

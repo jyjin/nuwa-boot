@@ -9,9 +9,10 @@
 		"reinstall": "rm -rf dist lib node_modules package-lock.json & npm i",
 		"start1": "webpack serve --mode=development --config webpack.config.babel.js",
 		"gulp-start": "gulp",
-		"start": "nuwa-boot start",
+		"prestart": "npm run prebuild",
+		"start": "./bin/nuwa-boot start",
 		"prebuild": "gulp prebuild",
-		"build": "nuwa-boot build",
+		"build": "./bin/nuwa-boot build",
 		"prepublish": "npm run build",
 		"publish": "npm publish",
 		"beta": "npm publish --tag beta"

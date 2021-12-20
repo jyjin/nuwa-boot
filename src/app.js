@@ -5,7 +5,9 @@ import ReactDOM from 'react-dom';
 import Demo1 from './react/demo1';
 import Demo2 from './react/demo2';
 const AppMaster = React.lazy(() => import('/Users/jyjin/workspace/gitProject/nuwa-master/react/routes.js'))
+// const AppMaster = React.lazy(() => import('/Users/jyjin/workspace/gitProject/nuwa-master/nuwa/master/app.*.js'))
 const App1 = React.lazy(() => import('/Users/jyjin/workspace/gitProject/nuwa-app1/react/routes.js'))
+const App2 = React.lazy(() => import('/Users/jyjin/workspace/gitProject/nuwa-app2/react/routes.js'))
 
 
 function asyncComponent(Comp) {
@@ -29,7 +31,8 @@ const SubApps = () => {
   const props = {}
   return [
     <DefaultRoutePages {...props}/>,
-    asyncComponent(App1)
+    asyncComponent(App1),
+    asyncComponent(App2),
   ]
 }
 
